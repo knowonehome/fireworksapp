@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Firework Years</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firework year</th>
+      <th>Firework</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @firework_years.each do |firework_year| %>
+      <tr>
+        <td><%= firework_year.firework_year %></td>
+        <td><%= firework_year.firework %></td>
+        <td><%= link_to 'Show', firework_year %></td>
+        <td><%= link_to 'Edit', edit_firework_year_path(firework_year) %></td>
+        <td><%= link_to 'Destroy', firework_year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Firework Year', new_firework_year_path %>

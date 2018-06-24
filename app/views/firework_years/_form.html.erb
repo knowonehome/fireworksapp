@@ -1,0 +1,27 @@
+<%= form_with(model: firework_year, local: true) do |form| %>
+  <% if firework_year.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(firework_year.errors.count, "error") %> prohibited this firework_year from being saved:</h2>
+
+      <ul>
+      <% firework_year.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firework_year %>
+    <%= form.number_field :firework_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firework_id %>
+    <%= form.text_field :firework_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -4,7 +4,6 @@ class CreateFireworks < ActiveRecord::Migration[5.2]
       t.string :firework_name
       t.string :style
       t.text :description
-
       t.timestamps
     end
   end
