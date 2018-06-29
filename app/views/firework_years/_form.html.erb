@@ -18,7 +18,31 @@
 
   <div class="field">
     <%= form.label :firework_id %>
-    <%= form.text_field :firework_id %>
+    <%= form.text_field :firework_id, :value => @firework_id %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :firework_detail do |d| %>
+    <div class="field">
+      <%= d.label :stash %>
+      <%= d.check_box :stash %>
+    </div>
+
+    <div class="field">
+      <%= d.label :quantity %>
+      <%= d.number_field :quantity %>
+    </div>
+
+    <div class="field">
+      <%= d.label :price %>
+      <%= d.text_field :price %>
+    </div>
+
+    <div class="field">
+      <%= d.label :firework_id %>
+      <%= d.text_field :firework_id, :value => @firework_id %>
+    </div>
+    <% end %>
   </div>
 
   <div class="actions">

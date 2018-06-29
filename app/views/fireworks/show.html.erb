@@ -13,5 +13,7 @@
   <strong>Description:</strong>
   <%= @firework.description %>
 </p>
+<%= link_to 'New Year/Details', new_firework_detail_path(firework_id: @firework.id ) %>
+<br>
 <%= link_to 'Edit', edit_firework_path(@firework) %> |
 <%= link_to 'Back', fireworks_path %>

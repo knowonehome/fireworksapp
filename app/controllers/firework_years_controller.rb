@@ -14,7 +14,11 @@ class FireworkYearsController < ApplicationController
 
   # GET /firework_years/new
   def new
+
     @firework_year = FireworkYear.new
+    @firework_id = params[:id]
+    # @firework = @firework_id
+    @firework_name = params[:firework_name]
   end
 
   # GET /firework_years/1/edit
