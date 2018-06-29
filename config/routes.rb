@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :firework_years
   resources :firework_details
-  resources :fireworks
+  resources :fireworks do
+    resources :firework_details
+  end
   devise_for :users
 
   root to: 'fireworks#index'

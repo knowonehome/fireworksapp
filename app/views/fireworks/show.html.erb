@@ -13,7 +13,17 @@
   <strong>Description:</strong>
   <%= @firework.description %>
 </p>
-<%= link_to 'New Year/Details', new_firework_detail_path(firework_id: @firework.id ) %>
+
+<p>
+  <% @firework.firework_details.each do |fd| %>
+    <strong>Firework Year and Price:</strong>
+    <br>
+  <%= fd.price %>
+  <%= fd.stash %>
+  <%= fd.quantity %>
+  <% end %>
+</p>
+<%= link_to 'New Year/Details', new_firework_firework_detail_path(@firework, firework_id: @firework.id, firework_name: @firework.firework_name) %>
 <br>
 <%= link_to 'Edit', edit_firework_path(@firework) %> |
 <%= link_to 'Back', fireworks_path %>

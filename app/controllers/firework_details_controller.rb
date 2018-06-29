@@ -14,15 +14,20 @@ class FireworkDetailsController < ApplicationController
 
   # GET /firework_details/new
   def new
+
     @firework_detail = FireworkDetail.new
     @firework_year = @firework_detail.build_firework_year
     @firework_id = params[:id]
+    @firework_name = params[:firework_name]
   end
 
   # GET /firework_details/1/edit
   def edit
   end
-
+  # helper_method :current_firework
+  # def current_firework
+  #   @current_firework = Firework.find(params[:id])
+  # end
   # POST /firework_details
   # POST /firework_details.json
   def create
