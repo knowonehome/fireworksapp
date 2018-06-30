@@ -23,7 +23,7 @@
   <%= fd.quantity %>
   <% end %>
 </p>
-<%= link_to 'New Year/Details', new_firework_firework_detail_path(@firework, firework_id: @firework.id, firework_name: @firework.firework_name) %>
+<%= link_to 'New Year with details', new_firework_firework_year_firework_detail_path(@firework, firework_id: @firework.id, firework_name: @firework.firework_name)	 %>
 <br>
 <%= link_to 'Edit', edit_firework_path(@firework) %> |
 <%= link_to 'Back', fireworks_path %>

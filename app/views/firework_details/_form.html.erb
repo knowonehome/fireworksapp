@@ -1,5 +1,5 @@
-<%= form_for @firework_detail do |form| %>
-  <% if @firework_detail.errors.any? %>
+<%= form_with(model: firework_detail, local: true) do |form| %>
+  <% if firework_detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(firework_detail.errors.count, "error") %> prohibited this firework_detail from being saved:</h2>
 
@@ -28,7 +28,16 @@
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
-
+  <% form.fields_for firework_detail.firework_year do |year|  %>
+    <div class="field">
+      <%= year.hidden_field :firework_id, value: params['firework_id'] %>
+    </div>
+    <div class="field">
+      <%= year.label :year %>
+      <%= year.text_field :year, value: Time.current.year %>
+    </div>
+  <% end %>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
