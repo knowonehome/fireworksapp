@@ -69,6 +69,6 @@ class FireworkYearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def firework_year_params
-      params.require(:firework_year).permit(:firework_year, :firework_id)
+      params.require(:firework_year).permit(:firework_year, firework_details_attributes: [:stash, :quantity, :price, :firework_id, :firework_year_id])
     end
 end

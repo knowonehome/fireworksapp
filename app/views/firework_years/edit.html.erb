@@ -1,6 +1,11 @@
-<h1>Editing Firework Year</h1>
+<div class="container">
+  <div class="appcontent">
+    <div class="col-lg-10 col-md-9">
+      <h1 class="page-header">Editing Firework Year</h1>
+    </div>
+    <%= render 'form', firework_year: @firework_year %>
 
-<%= render 'form', firework_year: @firework_year %>
-
-<%= link_to 'Show', @firework_year %> |
-<%= link_to 'Back', firework_years_path %>
+    <%= link_to 'Show', @firework_year, class: 'btn btn-primary' %>
+  </div>
+</div>
+~

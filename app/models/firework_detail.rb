@@ -1,4 +1,4 @@
 class FireworkDetail < ApplicationRecord
-  belongs_to :firework_year
-  belongs_to :firework
+  belongs_to :firework_year, optional: true
+  belongs_to :firework, optional: true
 end

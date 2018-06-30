@@ -10,18 +10,43 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :firework_year %>
-    <%= form.number_field :firework_year %>
+  <div class="form">
+      <div class="container-fluid">
+        <div class="col-lg-12 col-lg-9 col-lg-12 col-xs-12">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="field">
+                <!-- https://stackoverflow.com/questions/13001904/rails-drop-down-select-month-year -->
+                Select Year: <%= form.select(:firework_year, Date.today.year.. 8.years.from_now.year) %>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="field">
+                <%= form.label :firework_id %>
+                <%= form.select(:firework_id, Firework.all.collect {|a| [a.firework_name, a.id]}) %>
+              </div>
+            </div>
+          </div>
+          <% form.fields_for :firework_details do |d| %>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="field">
+                  <%= d.label :stash %>
+                  <%= d.check_box :stash %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <br>
+          <div class="actions">
+            <%= link_to 'Back', firework_years_path, class: 'btn btn-primary' %>
+            <%= form.submit "Finish", class: 'btn btn-success' %>
+          </div>
+          <br>
+      </div>
   </div>
-
-  <div class="field">
-    <%= form.label :firework_id %>
-    <%= form.text_field :firework_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>
