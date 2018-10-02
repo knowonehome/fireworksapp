@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :years
   resources :firework_years
   resources :firework_details
   resources :fireworks

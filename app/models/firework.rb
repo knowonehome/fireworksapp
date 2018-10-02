@@ -1,6 +1,6 @@
 class Firework < ApplicationRecord
   has_many :firework_details
-  has_many :firework_years, through: :firework_details
+  has_many :years, through: :firework_details
   # accepts_nested_attributes_for :firework_years, allow_destroy: true
 
   # most recent price. recording multiple years on price.

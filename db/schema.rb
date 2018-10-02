@@ -10,28 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_013901) do
+ActiveRecord::Schema.define(version: 2018_06_23_203355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "firework_details", force: :cascade do |t|
-    t.boolean "stash"
-    t.integer "quantity"
-    t.decimal "price"
-    t.bigint "firework_year_id"
-    t.bigint "firework_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["firework_id"], name: "index_firework_details_on_firework_id"
-    t.index ["firework_year_id"], name: "index_firework_details_on_firework_year_id"
-  end
-
-  create_table "firework_years", force: :cascade do |t|
-    t.integer "firework_year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "fireworks", force: :cascade do |t|
     t.string "firework_name"
