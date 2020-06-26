@@ -17,7 +17,7 @@ class FireworksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create firework" do
     assert_difference('Firework.count') do
-      post fireworks_url, params: { firework: {  } }
+      post fireworks_url, params: { firework: { description: @firework.description, name: @firework.name, style: @firework.style } }
     end
 
     assert_redirected_to firework_url(Firework.last)
@@ -34,7 +34,7 @@ class FireworksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update firework" do
-    patch firework_url(@firework), params: { firework: {  } }
+    patch firework_url(@firework), params: { firework: { description: @firework.description, name: @firework.name, style: @firework.style } }
     assert_redirected_to firework_url(@firework)
   end
 

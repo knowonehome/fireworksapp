@@ -14,6 +14,9 @@ class FireworksTest < ApplicationSystemTestCase
     visit fireworks_url
     click_on "New Firework"
 
+    fill_in "Description", with: @firework.description
+    fill_in "Name", with: @firework.name
+    fill_in "Style", with: @firework.style
     click_on "Create Firework"
 
     assert_text "Firework was successfully created"
@@ -24,6 +27,9 @@ class FireworksTest < ApplicationSystemTestCase
     visit fireworks_url
     click_on "Edit", match: :first
 
+    fill_in "Description", with: @firework.description
+    fill_in "Name", with: @firework.name
+    fill_in "Style", with: @firework.style
     click_on "Update Firework"
 
     assert_text "Firework was successfully updated"

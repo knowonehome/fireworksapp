@@ -67,8 +67,8 @@ class FireworksController < ApplicationController
       @firework = Firework.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Only allow a list of trusted parameters through.
     def firework_params
-      params.require(:firework).permit(:firework_name, :style, :description, firework_years_attributes: [:firework_year])
+      params.require(:firework).permit(:name, :style, :description)
     end
 end
